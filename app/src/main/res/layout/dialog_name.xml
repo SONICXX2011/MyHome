@@ -1,51 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp"
-    android:background="@drawable/card_gradient"
     android:orientation="vertical"
+    android:layoutDirection="rtl"
     android:padding="24dp"
-    android:layoutDirection="rtl">
+    android:background="@drawable/dialog_background">
 
     <TextView
         android:id="@+id/nameDialogTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="شروع قوی از همین‌جا 🔥"
-        android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textColor="@color/text_primary"
+        android:textSize="23sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="می‌خوام از این به بعد با اسم خودت صدات کنم."
-        android:textColor="@color/muted"
-        android:textSize="14sp" />
+        android:gravity="center"
+        android:text="اسمت رو وارد کن تا برنامه شخصی‌تر بشه"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp" />
 
-    <EditText
-        android:id="@+id/nameInput"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/input_bg"
-        android:hint="مثلاً علی"
-        android:inputType="textCapWords"
-        android:singleLine="true"
-        android:textColor="@color/white"
-        android:textColorHint="#62708C"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:hint="نام شما"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="@color/input_background"
+        app:boxCornerRadiusTopStart="18dp"
+        app:boxCornerRadiusTopEnd="18dp"
+        app:boxCornerRadiusBottomStart="18dp"
+        app:boxCornerRadiusBottomEnd="18dp"
+        app:boxStrokeColor="@color/primary"
+        app:hintTextColor="@color/text_secondary">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameInput"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center_vertical"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/saveNameButton"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/primary"
-        android:text="بزن بریم 🚀"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        android:layout_height="58dp"
+        android:layout_marginTop="18dp"
+        android:text="ثبت اسم  ✓"
+        android:textAllCaps="false"
+        android:textColor="@color/button_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/primary"
+        app:cornerRadius="20dp"
+        app:elevation="5dp"
+        app:rippleColor="@color/secondary" />
+
 </LinearLayout>

@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_main"
     android:fillViewport="true"
-    android:layoutDirection="rtl"
     android:overScrollMode="never">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="18dp">
+        android:padding="18dp"
+        android:layoutDirection="rtl">
+
+        <!-- HEADER -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,297 +35,485 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="سلام، قهرمان 👋"
-                    android:textColor="@color/white"
+                    android:textColor="@color/text_primary"
                     android:textSize="27sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="5dp"
                     android:text="امروز قراره یک درصد بهتر بشی."
-                    android:textColor="@color/muted"
+                    android:textColor="@color/text_secondary"
                     android:textSize="14sp" />
+
             </LinearLayout>
 
-            <Button
-                android:id="@+id/editNameButton"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:backgroundTint="#19233C"
-                android:minWidth="0dp"
-                android:paddingStart="14dp"
-                android:paddingEnd="14dp"
-                android:text="پروفایل ✏️"
-                android:textColor="#DCE5FF"
-                android:textSize="12sp" />
+            <ImageButton
+                android:id="@+id/themeButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/theme_button_bg"
+                android:contentDescription="تغییر تم"
+                android:padding="13dp"
+                android:src="@drawable/ic_moon"
+                android:tint="@color/text_primary" />
+
         </LinearLayout>
+
+        <!-- PROFILE BUTTON -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editNameButton"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:text="✏️  ویرایش نام و پروفایل"
+            android:textAllCaps="false"
+            android:textColor="@color/button_text"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/primary"
+            app:cornerRadius="18dp"
+            app:elevation="4dp"
+            app:rippleColor="@color/secondary" />
+
+        <!-- STATS -->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="118dp"
             android:layout_marginTop="18dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="112dp"
-                android:layout_marginEnd="6dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/card_purple"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🔥 رکورد فعلی"
-                    android:textColor="#EFEAFF"
+                    android:text="🔥 رکورد"
+                    android:textColor="@color/card_text"
                     android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/streakValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="2dp"
                     android:text="0"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
+                    android:textColor="@color/card_text"
+                    android:textSize="29sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="روز پاکی"
-                    android:textColor="#EFEAFF"
+                    android:text="روز"
+                    android:textColor="@color/card_text"
                     android:textSize="11sp" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="112dp"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="3dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/card_green"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="🏆 بهترین"
-                    android:textColor="#E9FFFA"
+                    android:textColor="@color/card_text"
                     android:textSize="12sp" />
+
                 <TextView
                     android:id="@+id/bestValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
                     android:text="0"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
+                    android:textColor="@color/card_text"
+                    android:textSize="29sp"
                     android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="بهترین رکورد"
-                    android:textColor="#E9FFFA"
+                    android:text="روز"
+                    android:textColor="@color/card_text"
                     android:textSize="11sp" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="112dp"
-                android:layout_marginStart="6dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/card_orange"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="⭐ سطح"
-                    android:textColor="#FFF6E5"
+                    android:textColor="@color/card_text"
                     android:textSize="12sp" />
+
                 <TextView
                     android:id="@+id/levelValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
                     android:text="LVL 1"
-                    android:textColor="@color/white"
-                    android:textSize="26sp"
+                    android:textColor="@color/card_text"
+                    android:textSize="21sp"
                     android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/xpValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
                     android:text="0 XP"
-                    android:textColor="#FFF6E5"
+                    android:textColor="@color/card_text"
                     android:textSize="11sp" />
+
             </LinearLayout>
+
         </LinearLayout>
+
+        <!-- TODAY SCORE -->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="112dp"
             android:layout_marginTop="14dp"
             android:background="@drawable/card_gradient"
-            android:orientation="vertical"
-            android:padding="20dp">
-            <TextView
-                android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="22dp"
+            android:paddingEnd="22dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="🎯 مأموریت امروز"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="منتظر انگیزه نباش؛ یک کار کوچک را همین امروز انجام بده و امتیاز بگیر."
-                android:textColor="@color/muted"
-                android:textSize="14sp" />
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="امتیاز امروز"
+                    android:textColor="@color/card_text"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="قدم‌های کوچک، نتیجه بزرگ"
+                    android:textColor="@color/card_text"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/todayScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="10dp"
                 android:text="0%"
-                android:textColor="@color/secondary"
-                android:textSize="30sp"
+                android:textColor="@color/card_text"
+                android:textSize="34sp"
                 android:textStyle="bold" />
+
         </LinearLayout>
 
-        <LinearLayout
+        <!-- SECTION TITLE -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="امروزت رو بساز 💪"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- CLEAN CARD -->
+
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cleanCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/card_red"
+            android:layout_height="88dp"
+            android:layout_marginTop="12dp"
             android:clickable="true"
             android:focusable="true"
-            android:orientation="vertical"
-            android:padding="18dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🔥 امروز پاک بودم"
-                android:textColor="@color/white"
-                android:textSize="19sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/cleanStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="امروز را ثبت کن"
-                android:textColor="#FFE9EC"
-                android:textSize="13sp" />
-        </LinearLayout>
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/secondary"
+            app:strokeWidth="1dp">
 
-        <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp">
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/card_green"
+                    android:gravity="center"
+                    android:text="🛡️"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="پاکی امروز"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/cleanStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="امروز را قدرتمند ثبت کن"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textColor="@color/secondary"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- WORKOUT CARD -->
+
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/workoutCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/card_green"
+            android:layout_height="88dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:orientation="vertical"
-            android:padding="18dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="💪 تمرین امروز"
-                android:textColor="@color/white"
-                android:textSize="19sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/workoutStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="۲۰ دقیقه حرکت"
-                android:textColor="#E8FFFA"
-                android:textSize="13sp" />
-        </LinearLayout>
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/accent"
+            app:strokeWidth="1dp">
 
-        <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp">
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/card_orange"
+                    android:gravity="center"
+                    android:text="💪"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تمرین امروز"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/workoutStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="حداقل ۲۰ دقیقه حرکت"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textColor="@color/accent"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- WORSHIP CARD -->
+
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/worshipCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/card_purple"
+            android:layout_height="88dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:orientation="vertical"
-            android:padding="18dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🤲 وقت نزدیک‌شدن"
-                android:textColor="@color/white"
-                android:textSize="19sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/worshipStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="نماز + قرآن + ذکر"
-                android:textColor="#F0ECFF"
-                android:textSize="13sp" />
-        </LinearLayout>
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/primary"
+            app:strokeWidth="1dp">
 
-        <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp">
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/card_purple"
+                    android:gravity="center"
+                    android:text="🤲"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="بخش معنوی"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/worshipStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="نماز + قرآن + ذکر"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textColor="@color/primary"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- REPORT BUTTON -->
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/reportButton"
             android:layout_width="match_parent"
             android:layout_height="58dp"
-            android:layout_marginTop="14dp"
-            android:backgroundTint="@color/secondary"
-            android:text="گزارش امروز را ثبت کن →"
-            android:textColor="#071815"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="18dp"
+            android:text="گزارش امروز را ثبت کن  →"
+            android:textAllCaps="false"
+            android:textColor="@color/button_text"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/secondary"
+            app:cornerRadius="20dp"
+            app:elevation="5dp"
+            app:rippleColor="@color/primary" />
+
+        <!-- NOTIFICATION -->
 
         <TextView
             android:id="@+id/notificationHint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@drawable/card_gradient"
+            android:background="@drawable/input_bg"
             android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
-            android:padding="15dp"
-            android:text="🔔 یادآوری روزانه ساعت ۲۰:۰۰ فعال می‌شود — برای اجازه اعلان لمس کن"
-            android:textColor="#C8D2EA"
+            android:padding="14dp"
+            android:text="🔔  فعال‌سازی یادآوری‌های روزانه"
+            android:textColor="@color/text_secondary"
             android:textSize="12sp" />
 
-        <Button
-            android:id="@+id/resetButton"
-            android:layout_width="wrap_content"
-            android:layout_height="44dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="14dp"
-            android:backgroundTint="#172139"
-            android:minWidth="0dp"
-            android:text="ریست رکورد"
-            android:textColor="#FFB5BE"
-            android:textSize="11sp" />
+        <!-- RESET -->
 
-        <TextView
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/resetButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="18dp"
-            android:gravity="center"
-            android:text="بدون سرزنش • فقط پیشرفت • هر روز یک قدم"
-            android:textColor="#60708C"
-            android:textSize="11sp" />
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="12dp"
+            android:text="ریست رکورد"
+            android:textAllCaps="false"
+            android:textColor="@color/danger"
+            android:textSize="14sp"
+            app:backgroundTint="@android:color/transparent"
+            app:cornerRadius="18dp"
+            app:strokeColor="@color/danger"
+            app:strokeWidth="1dp" />
+
     </LinearLayout>
+
 </ScrollView>

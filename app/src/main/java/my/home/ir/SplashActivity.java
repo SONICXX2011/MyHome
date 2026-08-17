@@ -12,41 +12,73 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
+
     private final Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        ThemeManager.applySavedTheme(this);
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_splash);
 
         View logo = findViewById(R.id.splashLogo);
         TextView title = findViewById(R.id.splashTitle);
         TextView sub = findViewById(R.id.splashSubtitle);
 
-        logo.setScaleX(0.65f);
-        logo.setScaleY(0.65f);
+        logo.setScaleX(0.60f);
+        logo.setScaleY(0.60f);
         logo.setAlpha(0f);
+
         title.setAlpha(0f);
         sub.setAlpha(0f);
 
-        AnimatorSet set = new AnimatorSet();
-        set.playTogether(
-                ObjectAnimator.ofFloat(logo, View.ALPHA, 0f, 1f),
-                ObjectAnimator.ofFloat(logo, View.SCALE_X, 0.65f, 1f),
-                ObjectAnimator.ofFloat(logo, View.SCALE_Y, 0.65f, 1f),
-                ObjectAnimator.ofFloat(title, View.ALPHA, 0f, 1f),
-                ObjectAnimator.ofFloat(sub, View.ALPHA, 0f, 1f)
+        ObjectAnimator logoAlpha =
+                ObjectAnimator.ofFloat(logo, View.ALPHA, 0f, 1f);
+
+        ObjectAnimator logoScaleX =
+                ObjectAnimator.ofFloat(logo, View.SCALE_X, 0.60f, 1f);
+
+        ObjectAnimator logoScaleY =
+                ObjectAnimator.ofFloat(logo, View.SCALE_Y, 0.60f, 1f);
+
+        ObjectAnimator titleAlpha =
+                ObjectAnimator.ofFloat(title, View.ALPHA, 0f, 1f);
+
+        ObjectAnimator subAlpha =
+                ObjectAnimator.ofFloat(sub, View.ALPHA, 0f, 1f);
+
+        AnimatorSet animation = new AnimatorSet();
+
+        animation.playTogether(
+                logoAlpha,
+                logoScaleX,
+                logoScaleY,
+                titleAlpha,
+                subAlpha
         );
-        set.setDuration(900);
-        set.setInterpolator(new DecelerateInterpolator());
-        set.start();
+
+        animation.setDuration(1000);
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.start();
 
         handler.postDelayed(() -> {
-            Intent next = new Intent(this, MainActivity.class);
-            startActivity(next);
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+            Intent intent =
+                    new Intent(SplashActivity.this, MainActivity.class);
+
+            startActivity(intent);
+
+            overridePendingTransition(
+                    android.R.anim.fade_in,
+                    android.R.anim.fade_out
+            );
+
             finish();
-        }, 1450);
+
+        }, 1550);
     }
 
     @Override
