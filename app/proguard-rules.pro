@@ -1,0 +1,1 @@
+# MyHome custom ProGuard rules.
