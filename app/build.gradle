@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'com.myhome.app'
+    namespace 'my.home.ir'
     compileSdk 33
 
     defaultConfig {
